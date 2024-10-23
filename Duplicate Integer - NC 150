@@ -1,0 +1,17 @@
+//Given an integer array nums, return true if any value appears more than once in the array, otherwise return false
+
+class Solution {
+    public boolean hasDuplicate(int[] nums) {
+        HashMap map = new HashMap();
+        for(int i: nums){
+            if( map.containsKey(i) && map.get(i).equals(1)){
+                return true;
+            }
+            else{
+                map.put(i,1);
+            }
+        }
+        return false;
+ 
+    }
+}
