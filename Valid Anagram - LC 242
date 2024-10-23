@@ -1,0 +1,40 @@
+//Valid anagram
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        HashMap<Character,Integer> countCharacters = new HashMap<Character,Integer>();
+        boolean result = false;
+        for(Character ch:s.toCharArray()){
+            if(countCharacters.containsKey(ch)){
+                countCharacters.put(ch,(Integer)countCharacters.get(ch)+1);
+            }else{
+                countCharacters.put(ch,1);
+            }
+        }
+
+        for(Character ch2:t.toCharArray()){
+            if(countCharacters.containsKey(ch2)){
+                countCharacters.put(ch2,countCharacters.get(ch2)-1);
+            }else{
+                countCharacters.put(ch2,1);
+                return result;
+            }
+        }
+
+       
+
+        int count =0;
+        for(Map.Entry<Character,Integer> e: countCharacters.entrySet()){
+            if(e.getValue()!=0)
+                return false;
+            count+=Math.abs(e.getValue());
+        }
+
+        if(count == 0){
+            result = true;
+        }else{
+            result = false;
+        }
+        return result;
+
+    }
+}
