@@ -1,0 +1,39 @@
+//872. Leaf-Similar Trees
+ public class TreeNode {
+      int val;
+      TreeNode left;
+      TreeNode right;
+      TreeNode() {}
+      TreeNode(int val) { this.val = val; }
+      TreeNode(int val, TreeNode left, TreeNode right) {
+          this.val = val;
+          this.left = left;
+          this.right = right;
+      }
+  }
+class Solution {
+    public boolean leafSimilar(TreeNode root1, TreeNode root2) {
+        ArrayList<Integer> root1Leaf = new ArrayList<Integer>();
+        ArrayList<Integer> root2Leaf = new ArrayList<Integer>();
+        root1Leaf = collectLeaves(root1, root1Leaf);
+        root2Leaf = collectLeaves(root2, root2Leaf);
+        if(root1Leaf.equals(root2Leaf)){
+            return true;
+        }else{
+            return false;
+        }
+
+        
+    }
+
+ ArrayList<Integer> collectLeaves(TreeNode root, ArrayList<Integer> leaf){
+    if(root == null) return leaf;
+        if(root.left == null && root.right == null){
+            leaf.add(root.val);
+        }
+        leaf = collectLeaves(root.left, leaf);
+        leaf = collectLeaves(root.right,leaf);
+        return leaf;
+
+ }
+}
