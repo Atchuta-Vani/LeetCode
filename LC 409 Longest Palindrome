@@ -47,3 +47,39 @@ class Solution {
        return total; 
     }
 }
+
+// Optimized Solution
+//Use Integer Array for frequency counting.
+/*
+public class Solution {
+    public int longestPalindrome(String s) {
+        int[] freq = new int[128];  // Assuming ASCII characters
+        
+        // Count the frequency of each character
+        for (char c : s.toCharArray()) {
+            freq[c]++;
+        }
+        
+        int length = 0;
+        boolean hasOddFrequency = false;
+        
+        // Iterate over the frequency array to calculate the length of the palindrome
+        for (int count : freq) {
+            if (count % 2 == 0) {
+                length += count;  // Add even counts completely
+            } else {
+                length += count - 1;  // Add the largest even number (count - 1)
+                hasOddFrequency = true;  // There is at least one character with an odd count
+            }
+        }
+        
+        // If there was any character with an odd count, we can place one in the center
+        if (hasOddFrequency) {
+            length += 1;
+        }
+        
+        return length;
+    }
+}
+
+*/
