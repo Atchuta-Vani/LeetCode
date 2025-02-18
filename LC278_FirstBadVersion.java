@@ -38,7 +38,7 @@ Loop Termination: The loop stops when left == right, ensuring left points to the
 
 public class Solution extends VersionControl {
     public int firstBadVersion(int n) {
-        int left = 1, right = n;
+        int left = 1, right = n; // This is not index of Array. it is the value since size of array is given as input.
         
         while (left < right) {
             int mid = left + (right - left) / 2;
