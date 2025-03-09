@@ -1,3 +1,22 @@
+/*
+Optimal Approach: Sorting + One-Pass Comparison
+Pattern: Sorting + Single Pass to Find Minimum Difference
+Steps:
+Sort the Array:
+
+
+Sort arr to simplify finding consecutive pairs with minimum absolute difference.
+Find Minimum Absolute Difference:
+
+
+Use a single pass to calculate the minimum absolute difference between consecutive elements.
+Collect Pairs:
+
+
+Perform another pass to collect all pairs with the minimum absolute difference.
+
+*/
+
 class Solution {
     public List<List<Integer>> minimumAbsDifference(int[] arr) {
 
