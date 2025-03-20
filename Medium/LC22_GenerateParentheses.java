@@ -1,6 +1,7 @@
 
 //22. Generate Parentheses
 //backtrack
+//O(2 power 2n)
 
 
 class Solution {
