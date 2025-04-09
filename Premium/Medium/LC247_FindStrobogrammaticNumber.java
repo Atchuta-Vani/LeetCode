@@ -1,3 +1,15 @@
+/**
+Use DFS (Backtracking).
+
+Build numbers from outside in (left and right together).
+
+Handle even and odd length carefully:
+
+If n is odd, middle element must be 0, 1, or 8.
+
+Avoid numbers that start with 0 (except if the number is just 0).
+*/
+
 package LC;
 
 import java.util.ArrayList;
