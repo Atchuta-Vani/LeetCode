@@ -1,21 +1,14 @@
+// check 27 as well.
+//26. Remove Duplicates from Sorted Array
 class Solution {
     public int removeDuplicates(int[] nums) {
-        int l = 0;
-        
-        for(int r = 0;r<nums.length;r++){
-            if(r<nums.length-1 && nums[r] == nums[r+1]){
-                //l = r+1;
-                while(r<nums.length-1 && nums[r] == nums[r+1]){
-                    r++;
-                }
-            }    
-            
-            
-            //System.out.println("l "+l+"r "+r);
-            nums[l] = nums[r];
-            //r++;
-            l++;
+        int left = 0;
+        for(int right = 0;right<nums.length;right++){
+            while(right+1<nums.length && nums[right] == nums[right+1]) right++;
+            nums[left] = nums[right];
+            left++;
         }
-    return l;        
+    return left;    
+        
     }
 }
