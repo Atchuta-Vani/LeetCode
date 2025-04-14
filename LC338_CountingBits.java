@@ -8,6 +8,10 @@ For example, if i = 5 (binary 101):
 5 & 1 = 1 → because 5 is odd, so it has one extra 1.
 
 So, countBits(5) = countBits(2) + 1.
+
+Time: O(n)
+
+Space: O(n) (for the result array)
 338. Counting Bits
  */
 class Solution {
